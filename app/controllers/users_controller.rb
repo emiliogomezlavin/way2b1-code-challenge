@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  ## Landing page where users can search for Github users
+  def home
+    @user = User.new
+    render :home
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -69,6 +75,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :bio, :public_repos, :followers, :following, :profile_pic)
+      params.require(:user).permit(:name, :email, :bio, :public_repos, :followers, :following, :profile_pic, :github_url)
     end
 end

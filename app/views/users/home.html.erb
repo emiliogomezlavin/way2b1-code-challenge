@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <div class="col m6 offset-m3 form form-style">
+      <h1>Welcome!</h1>
+      <h4>Search the Github information of a user from their url</h4>
+      <%= form_for @user do |f| %>
+      <div class="col m12">
+        Github URL:
+        <br>
+        <%= f.text_field :github_url, class: "form-control" %>
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <%= f.submit "Find User", class: "waves-effect waves-light btn-large form-button form-submit-style" %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
