@@ -7,12 +7,13 @@ class UsersController < ApplicationController
     render :home
   end
 
-  # Fetch user data from received url
+  # Fetch user info and repos details from received url
   def get_user_details
     @user = User.create_new_user(user_params)
-    render :show 
+    User.get_user_repos(@user)
+    redirect_to @user
   end
-
+ 
 
 
   #######  Code generated with scaffold generator  #########

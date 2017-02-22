@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Github username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
@@ -39,6 +44,12 @@
   <%= @user.github_url %>
 </p>
 
+
+<ul>
+  <% @user.repos_array.each do |repo| %>
+    <li><%= repo %></li>
+  <% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
