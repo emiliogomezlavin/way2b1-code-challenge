@@ -1,11 +1,21 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  ## Landing page where users can search for Github users
+  # Landing page where users can search for Github users
   def home
     @user = User.new
     render :home
   end
+
+  # Fetch user data from received url
+  def get_user_details
+    @user = User.create_new_user(user_params)
+    render :show 
+  end
+
+
+
+  #######  Code generated with scaffold generator  #########
 
   # GET /users
   # GET /users.json

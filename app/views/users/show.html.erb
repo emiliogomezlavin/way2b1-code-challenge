@@ -31,9 +31,15 @@
 </p>
 
 <p>
-  <strong>Profile pic:</strong>
-  <%= @user.profile_pic %>
+  <img src="<%= @user.profile_pic %>">
 </p>
+
+<p>
+  <strong>Github url:</strong>
+  <%= @user.github_url %>
+</p>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

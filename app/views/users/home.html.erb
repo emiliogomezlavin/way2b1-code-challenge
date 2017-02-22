@@ -5,7 +5,7 @@
     <div class="col m6 offset-m3 form form-style">
       <h1>Welcome!</h1>
       <h4>Search the Github information of a user from their url</h4>
-      <%= form_for @user do |f| %>
+      <%= form_for @user, url: get_user_details_path do |f| %>
       <div class="col m12">
         Github URL:
         <br>
@@ -19,4 +19,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> 
